@@ -1,4 +1,5 @@
 from room import Room
+from player import Player
 
 # Declare all the rooms
 
@@ -36,11 +37,13 @@ room['treasure'].s_to = room['narrow']
 #
 # Main
 #
-
+user_direction = input("Would you like to go `n`, `s`, `e`, `w` or `q` to quit game? ~~> ")
 # Make a new player object that is currently in the 'outside' room.
+new_player = Player('Oluwafemi', room['outside'])
+print(new_player)
 
 # Write a loop that:
-#
+
 # * Prints the current room name
 # * Prints the current description (the textwrap module might be useful here).
 # * Waits for user input and decides what to do.
@@ -49,3 +52,19 @@ room['treasure'].s_to = room['narrow']
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+while True:
+  if user_direction == 'n':
+        print("You went North")
+        break
+  elif user_direction == 's':
+      print("You went South")
+      break
+  elif user_direction == 'e':
+      print("You went East")
+      break
+  elif user_direction == 'w':
+      print("You went West")
+      break
+  elif user_direction == 'q':
+      print("Thank you for playing. Goodbye!")
+      break
